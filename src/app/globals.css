@@ -11,9 +11,17 @@
   --navy-light: #1e293b;
 }
 
+html {
+  width: 100%;
+  overflow-x: hidden;
+}
+
 body {
   color: var(--foreground);
   background: var(--background);
+  width: 100%;
+  min-height: 100vh;
+  overflow-x: hidden;
 }
 
 @layer utilities {

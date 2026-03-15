@@ -22,6 +22,9 @@ export const metadata: Metadata = {
   title: "رواد الامانة – لأعمال الشتر",
   description:
     "رواد الامانة لتركيب الشتر والزجاج – نوافذ شتر، تند ومظلات، غطاء حمام السباحة، عربات فودتراك. الرياض.",
+  icons: {
+    icon: "/favicon.svg",
+  },
 };
 
 export default function RootLayout({
@@ -35,7 +38,7 @@ export default function RootLayout({
       dir="rtl"
       className={`${cairo.variable} ${ibmPlexArabic.variable}`}
     >
-      <body className="antialiased font-arabic min-h-screen bg-[#fafaf9] text-[#0f172a]">
+      <body className="antialiased font-arabic min-h-screen bg-[#fafaf9] text-[#0f172a] w-full overflow-x-hidden">
         <Header />
         <main className="min-h-screen pb-20 md:pb-0">{children}</main>
         <Footer />
