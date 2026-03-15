@@ -78,8 +78,8 @@ export default function Footer() {
           </div>
         </div>
 
-        <div className="mt-16 pt-8 border-t border-slate-700 flex flex-col sm:flex-row justify-between items-center gap-6">
-          <p className="text-slate-500 text-sm">
+        <div className="mt-16 pt-8 border-t border-slate-700 flex flex-col sm:flex-row justify-center items-center gap-6">
+          <p className="text-slate-500 text-sm text-center">
             © {new Date().getFullYear()} رواد الامانة. جميع الحقوق محفوظة.{" "}
             <a
               href="https://dev-internal.on-dm.com/en"
