@@ -44,7 +44,7 @@ export default async function ServicePage({
 
       <div className="max-w-7xl mx-auto px-6 sm:px-8 lg:px-12 py-20">
         <div className="grid lg:grid-cols-3 gap-16">
-          <div className="lg:col-span-2 space-y-12">
+          <div className="lg:col-span-2 space-y-12 min-w-0 overflow-hidden">
             <section>
               <h2 className="font-cairo font-bold text-2xl text-slate-900 mb-6">
                 وصف الخدمة

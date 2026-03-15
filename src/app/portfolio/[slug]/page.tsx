@@ -41,7 +41,7 @@ export default async function PortfolioItemPage({
 
       <div className="max-w-7xl mx-auto px-6 sm:px-8 lg:px-12 py-20">
         <div className="grid lg:grid-cols-3 gap-16">
-          <div className="lg:col-span-2 space-y-12">
+          <div className="lg:col-span-2 space-y-12 min-w-0 overflow-hidden">
             {"description" in item && item.description && (
               <section>
                 <h2 className="font-cairo font-bold text-2xl text-slate-900 mb-6">

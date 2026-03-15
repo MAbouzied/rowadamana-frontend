@@ -77,14 +77,14 @@ export default function ImageSlider({ images, altPrefix }: ImageSliderProps) {
 
   return (
     <div
-      className="relative"
+      className="relative w-full max-w-full min-w-0 overflow-hidden"
       role="region"
       aria-label="معرض الصور"
       tabIndex={0}
     >
       {/* Main image */}
       <div
-        className="relative aspect-[4/3] sm:aspect-[16/10] rounded-2xl overflow-hidden bg-slate-100 shadow-lg touch-pan-y"
+        className="relative w-full aspect-[4/3] sm:aspect-[16/10] rounded-xl sm:rounded-2xl overflow-hidden bg-slate-100 shadow-lg touch-pan-y"
         onTouchStart={handleMainTouchStart}
         onTouchEnd={handleMainTouchEnd}
       >
@@ -135,11 +135,11 @@ export default function ImageSlider({ images, altPrefix }: ImageSliderProps) {
 
       {/* Thumbnail strip */}
       {len > 1 && (
-        <div className="mt-4">
+        <div className="mt-4 min-w-0">
           <div
             ref={thumbContainerRef}
-            className="flex gap-2 overflow-x-auto overflow-y-hidden scroll-smooth scrollbar-hide py-1 -mx-1 touch-pan-x"
-            style={{ scrollbarWidth: "none", msOverflowStyle: "none" }}
+            className="flex gap-2 overflow-x-auto overflow-y-hidden scroll-smooth scrollbar-hide py-1 min-w-0"
+            style={{ scrollbarWidth: "none", msOverflowStyle: "none", WebkitOverflowScrolling: "touch" } as React.CSSProperties}
             role="tablist"
             aria-label="اختر صورة"
           >
@@ -152,7 +152,7 @@ export default function ImageSlider({ images, altPrefix }: ImageSliderProps) {
                 role="tab"
                 aria-selected={i === activeIndex}
                 aria-label={`صورة ${i + 1}`}
-                className={`flex-shrink-0 w-[calc(20%-6px)] min-w-[72px] max-w-[100px] aspect-square rounded-xl overflow-hidden transition-all duration-300 ease-out focus:outline-none focus-visible:ring-2 focus-visible:ring-amber-500 focus-visible:ring-offset-2 ${
+                className={`flex-shrink-0 w-14 h-14 min-w-[56px] sm:w-16 sm:min-w-[64px] sm:h-16 md:min-w-[72px] md:max-w-[90px] aspect-square rounded-lg sm:rounded-xl overflow-hidden transition-all duration-300 ease-out focus:outline-none focus-visible:ring-2 focus-visible:ring-amber-500 focus-visible:ring-offset-2 ${
                   i === activeIndex
                     ? "ring-2 ring-amber-500 ring-offset-2 shadow-lg shadow-amber-500/20 scale-[1.02]"
                     : "opacity-70 hover:opacity-100 border-2 border-transparent hover:border-slate-200"
