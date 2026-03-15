@@ -33,12 +33,16 @@ export default function ImageSlider({ images, altPrefix }: ImageSliderProps) {
     const thumbLeft = thumb.offsetLeft;
     const thumbWidth = thumbRect.width + THUMBNAIL_GAP;
     const containerWidth = containerRect.width;
+    const maxScroll = container.scrollWidth - containerWidth;
 
-    // Center the active thumbnail or keep it visible
+    if (containerWidth <= 0 || maxScroll <= 0) return;
+
     const targetScroll = thumbLeft - containerWidth / 2 + thumbWidth / 2;
-    const clampedScroll = Math.max(0, Math.min(targetScroll, container.scrollWidth - containerWidth));
+    const clampedScroll = Math.max(0, Math.min(targetScroll, maxScroll));
 
-    container.scrollTo({ left: clampedScroll, behavior: "smooth" });
+    if (Number.isFinite(clampedScroll)) {
+      container.scrollTo({ left: clampedScroll, behavior: "smooth" });
+    }
   }, [activeIndex]);
 
   // Keyboard navigation

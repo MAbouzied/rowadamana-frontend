@@ -259,8 +259,8 @@ export const SERVICES: Record<
     title: "عربات الفود ترك",
     description:
       "حلول متكاملة لعربات الفودتراك المتحركة والثابتة بأعلى معايير الجودة والتصميم العصري، مناسبة للمشاريع الصغيرة والمتوسطة والكبيرة.",
-    image: "/images/food-trucks/food-truck-11.jpeg",
-    heroImage: "/images/food-trucks/food-truck-11.jpeg",
+    image: "https://rowadamana.com/images/food-trucks/WhatsApp%20Image%202026-03-11%20at%201.20.20%20PM.jpeg",
+    heroImage: "https://rowadamana.com/images/food-trucks/WhatsApp%20Image%202026-03-11%20at%201.20.20%20PM.jpeg",
     gallery: [
       "/images/food-trucks/WhatsApp Image 2026-03-11 at 1.20.19 PM (1).jpeg",
       "/images/food-trucks/WhatsApp Image 2026-03-11 at 1.20.19 PM (2).jpeg",
