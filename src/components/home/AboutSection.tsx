@@ -40,7 +40,7 @@ export default function AboutSection() {
           <div className="relative">
             <div className="aspect-[4/3] rounded-2xl overflow-hidden shadow-xl">
               <SiteImage
-                src="https://rowadamana.com/wp-content/uploads/2023/08/Untitled-design-45.jpg"
+                src="https://rowadamana.com/wp-content/uploads/2023/11/Untitled-design-44.jpg"
                 alt="رواد الامانة - أعمال الشتر والزجاج"
                 className="w-full h-full object-cover"
               />
