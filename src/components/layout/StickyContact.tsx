@@ -1,5 +1,6 @@
 "use client";
 
+import { pushLeadInteraction } from "@/lib/analytics";
 import { CONTACT } from "@/lib/constants";
 
 const whatsappUrl = `https://wa.me/${CONTACT.whatsapp.replace(/\D/g, "")}`;
@@ -31,6 +32,7 @@ export default function StickyContact() {
         rel="noopener noreferrer"
         className="fixed bottom-6 right-6 z-50 hidden md:flex w-14 h-14 items-center justify-center rounded-full bg-[#25D366] text-white shadow-lg hover:bg-[#20bd5a] hover:shadow-xl transition-all duration-200 focus:outline-none focus:ring-2 focus:ring-[#25D366] focus:ring-offset-2"
         aria-label="واتساب"
+        onClick={() => pushLeadInteraction("whatsapp", "sticky_desktop")}
       >
         <WhatsAppIcon className="w-7 h-7" />
       </a>
@@ -43,6 +45,7 @@ export default function StickyContact() {
             target="_blank"
             rel="noopener noreferrer"
             className="flex-1 flex items-center justify-center gap-2 py-3.5 px-4 rounded-2xl bg-[#25D366] text-white font-semibold text-base shadow-sm hover:bg-[#20bd5a] transition-colors"
+            onClick={() => pushLeadInteraction("whatsapp", "sticky_mobile")}
           >
             <WhatsAppIcon className="w-7 h-7 flex-shrink-0" />
             <span>واتساب</span>
@@ -50,6 +53,7 @@ export default function StickyContact() {
           <a
             href={telUrl}
             className="flex-1 flex items-center justify-center gap-2 py-3.5 px-4 rounded-2xl bg-white border border-slate-200 text-slate-700 font-semibold text-base shadow-sm hover:bg-slate-50 transition-colors"
+            onClick={() => pushLeadInteraction("phone", "sticky_mobile")}
           >
             <PhoneIcon className="w-6 h-6 flex-shrink-0" />
             <span>اتصل الآن</span>

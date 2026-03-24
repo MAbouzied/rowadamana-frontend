@@ -3,6 +3,7 @@
 import { useState } from "react";
 import Link from "next/link";
 import Logo from "@/components/shared/Logo";
+import { pushLeadInteraction } from "@/lib/analytics";
 import { NAV_LINKS } from "@/lib/constants";
 
 export default function Header() {
@@ -27,6 +28,7 @@ export default function Header() {
             <Link
               href="/contact"
               className="bg-amber-500 hover:bg-amber-600 text-white px-5 py-2 rounded-lg font-medium transition-colors"
+              onClick={() => pushLeadInteraction("nav_contact", "header_desktop")}
             >
               تواصل معنا
             </Link>
@@ -79,7 +81,10 @@ export default function Header() {
               <Link
                 href="/contact"
                 className="bg-amber-500 hover:bg-amber-600 text-white px-5 py-2 rounded-lg font-medium text-center"
-                onClick={() => setMobileOpen(false)}
+                onClick={() => {
+                  pushLeadInteraction("nav_contact", "header_mobile");
+                  setMobileOpen(false);
+                }}
               >
                 تواصل معنا
               </Link>

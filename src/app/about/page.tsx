@@ -1,5 +1,18 @@
-import { ABOUT_CONTENT } from "@/lib/constants";
+import type { Metadata } from "next";
 import SiteImage from "@/components/shared/SiteImage";
+import { ABOUT_CONTENT, SITE_NAME } from "@/lib/constants";
+import { getAbsoluteUrl } from "@/lib/site";
+
+export const metadata: Metadata = {
+  title: "من نحن",
+  description: ABOUT_CONTENT.intro,
+  alternates: { canonical: getAbsoluteUrl("/about") },
+  openGraph: {
+    title: `من نحن | ${SITE_NAME}`,
+    description: ABOUT_CONTENT.intro,
+    url: getAbsoluteUrl("/about"),
+  },
+};
 
 function ValueCard({
   title,

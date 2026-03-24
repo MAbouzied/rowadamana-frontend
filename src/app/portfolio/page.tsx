@@ -1,5 +1,18 @@
+import type { Metadata } from "next";
 import Link from "next/link";
-import { PORTFOLIO_ITEMS } from "@/lib/constants";
+import { PORTFOLIO_ITEMS, SITE_NAME } from "@/lib/constants";
+import { getAbsoluteUrl } from "@/lib/site";
+
+export const metadata: Metadata = {
+  title: "أعمالنا",
+  description:
+    "معرض مشاريع رواد الامانة: تركيب شتر، تند ومظلات، أغطية مسابح، عربات فودتراك وجودة تنفيذ عالية.",
+  alternates: { canonical: getAbsoluteUrl("/portfolio") },
+  openGraph: {
+    title: `أعمالنا | ${SITE_NAME}`,
+    url: getAbsoluteUrl("/portfolio"),
+  },
+};
 import SiteImage from "@/components/shared/SiteImage";
 
 export default function PortfolioPage() {

@@ -1,4 +1,6 @@
 import Link from "next/link";
+import TrackedContactAnchor from "@/components/analytics/TrackedContactAnchor";
+import TrackedContactLink from "@/components/analytics/TrackedContactLink";
 import Logo from "@/components/shared/Logo";
 import { NAV_LINKS, SERVICES, CONTACT } from "@/lib/constants";
 
@@ -18,18 +20,22 @@ export default function Footer() {
                 <span className="font-semibold text-slate-300">العنوان:</span>{" "}
                 {CONTACT.address}
               </p>
-              <a
+              <TrackedContactAnchor
                 href={`tel:${CONTACT.phone}`}
                 className="block text-slate-400 hover:text-amber-400 transition-colors"
+                leadChannel="phone"
+                leadLocation="footer"
               >
                 <span className="whitespace-nowrap">{CONTACT.phoneFormatted}</span>
-              </a>
-              <a
+              </TrackedContactAnchor>
+              <TrackedContactAnchor
                 href={`mailto:${CONTACT.email}`}
                 className="block text-slate-400 hover:text-amber-400 transition-colors"
+                leadChannel="email"
+                leadLocation="footer"
               >
                 {CONTACT.email}
-              </a>
+              </TrackedContactAnchor>
             </div>
           </div>
 
@@ -49,12 +55,14 @@ export default function Footer() {
                 </li>
               ))}
               <li>
-                <Link
+                <TrackedContactLink
                   href="/contact"
                   className="text-slate-400 hover:text-amber-400 transition-colors"
+                  leadChannel="nav_contact"
+                  leadLocation="footer"
                 >
                   صفحة التواصل
-                </Link>
+                </TrackedContactLink>
               </li>
             </ul>
           </div>

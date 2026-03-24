@@ -1,4 +1,5 @@
-import Link from "next/link";
+import TrackedContactAnchor from "@/components/analytics/TrackedContactAnchor";
+import TrackedContactLink from "@/components/analytics/TrackedContactLink";
 import { CONTACT } from "@/lib/constants";
 
 export default function ContactSection() {
@@ -14,9 +15,11 @@ export default function ContactSection() {
           </p>
         </div>
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-4xl mx-auto">
-          <a
+          <TrackedContactAnchor
             href={`tel:${CONTACT.phone}`}
             className="flex items-center gap-6 p-8 bg-white rounded-2xl border border-slate-200 hover:border-amber-500/30 hover:shadow-lg transition-all"
+            leadChannel="phone"
+            leadLocation="contact_section"
           >
             <div className="w-16 h-16 rounded-2xl bg-amber-500/10 flex items-center justify-center flex-shrink-0">
               <svg
@@ -37,12 +40,14 @@ export default function ContactSection() {
               <p className="font-bold text-slate-900 text-lg mb-1">اتصل بنا</p>
               <p className="text-slate-600 whitespace-nowrap">{CONTACT.phoneFormatted}</p>
             </div>
-          </a>
-          <a
+          </TrackedContactAnchor>
+          <TrackedContactAnchor
             href={`https://wa.me/${CONTACT.whatsapp.replace(/\D/g, "")}`}
             target="_blank"
             rel="noopener noreferrer"
             className="flex items-center gap-6 p-8 bg-white rounded-2xl border border-slate-200 hover:border-amber-500/30 hover:shadow-lg transition-all"
+            leadChannel="whatsapp"
+            leadLocation="contact_section"
           >
             <div className="w-16 h-16 rounded-2xl bg-green-100 flex items-center justify-center flex-shrink-0">
               <svg
@@ -57,7 +62,7 @@ export default function ContactSection() {
               <p className="font-bold text-slate-900 text-lg mb-1">واتس آب</p>
               <p className="text-slate-600 whitespace-nowrap">{CONTACT.phoneFormatted}</p>
             </div>
-          </a>
+          </TrackedContactAnchor>
           <div className="flex items-center gap-6 p-8 bg-white rounded-2xl border border-slate-200">
             <div className="w-16 h-16 rounded-2xl bg-slate-100 flex items-center justify-center flex-shrink-0">
               <svg
@@ -87,12 +92,14 @@ export default function ContactSection() {
           </div>
         </div>
         <div className="text-center mt-12">
-          <Link
+          <TrackedContactLink
             href="/contact"
             className="inline-flex items-center justify-center gap-2 bg-amber-500 hover:bg-amber-600 text-white px-10 py-4 rounded-xl font-bold transition-all shadow-lg hover:shadow-amber-500/25"
+            leadChannel="nav_contact"
+            leadLocation="contact_section"
           >
             صفحة التواصل
-          </Link>
+          </TrackedContactLink>
         </div>
       </div>
     </section>

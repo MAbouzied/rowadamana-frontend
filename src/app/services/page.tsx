@@ -1,5 +1,18 @@
+import type { Metadata } from "next";
 import Link from "next/link";
-import { SERVICES, SERVICE_SLUGS } from "@/lib/constants";
+import { SERVICES, SERVICE_SLUGS, SITE_NAME } from "@/lib/constants";
+import { getAbsoluteUrl } from "@/lib/site";
+
+export const metadata: Metadata = {
+  title: "خدماتنا",
+  description:
+    "رواد الامانة تقدم نوافذ شتر، تند ومظلات، غطاء حمام السباحة، عربات فودتراك والمزيد بأعلى جودة في الرياض وجدة.",
+  alternates: { canonical: getAbsoluteUrl("/services") },
+  openGraph: {
+    title: `خدماتنا | ${SITE_NAME}`,
+    url: getAbsoluteUrl("/services"),
+  },
+};
 import SiteImage from "@/components/shared/SiteImage";
 
 export default function ServicesPage() {

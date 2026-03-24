@@ -1,11 +1,39 @@
+import type { Metadata } from "next";
 import { notFound } from "next/navigation";
 import Link from "next/link";
-import { PORTFOLIO_ITEMS } from "@/lib/constants";
+import TrackedContactLink from "@/components/analytics/TrackedContactLink";
 import SiteImage from "@/components/shared/SiteImage";
 import ImageSlider from "@/components/shared/ImageSlider";
+import { PORTFOLIO_ITEMS, SITE_NAME } from "@/lib/constants";
+import { getAbsoluteUrl } from "@/lib/site";
 
 export async function generateStaticParams() {
   return PORTFOLIO_ITEMS.map((item) => ({ slug: item.slug }));
+}
+
+export async function generateMetadata({
+  params,
+}: {
+  params: Promise<{ slug: string }>;
+}): Promise<Metadata> {
+  const { slug } = await params;
+  const item = PORTFOLIO_ITEMS.find((p) => p.slug === slug);
+  if (!item) {
+    return {};
+  }
+  const description =
+    "summary" in item && item.summary ? item.summary : item.description;
+  return {
+    title: item.title,
+    description,
+    alternates: { canonical: getAbsoluteUrl(`/portfolio/${slug}`) },
+    openGraph: {
+      title: `${item.title} | ${SITE_NAME}`,
+      description,
+      url: getAbsoluteUrl(`/portfolio/${slug}`),
+      images: [{ url: item.image, alt: item.title }],
+    },
+  };
 }
 
 export default async function PortfolioItemPage({
@@ -89,12 +117,14 @@ export default async function PortfolioItemPage({
               </div>
             )}
 
-            <Link
+            <TrackedContactLink
               href="/contact"
               className="block w-full text-center bg-amber-500 hover:bg-amber-600 text-white px-8 py-4 rounded-xl font-bold transition-all"
+              leadChannel="nav_contact"
+              leadLocation="portfolio_item"
             >
               تواصل معنا الان
-            </Link>
+            </TrackedContactLink>
           </aside>
         </div>
 

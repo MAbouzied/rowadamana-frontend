@@ -1,4 +1,4 @@
-import Link from "next/link";
+import TrackedContactLink from "@/components/analytics/TrackedContactLink";
 import { ABOUT_CONTENT } from "@/lib/constants";
 
 export default function CTASection() {
@@ -11,12 +11,14 @@ export default function CTASection() {
         <p className="text-slate-300 text-lg mb-10 leading-relaxed">
           {ABOUT_CONTENT.difference}
         </p>
-        <Link
+        <TrackedContactLink
           href="/contact"
           className="inline-flex items-center justify-center gap-2 bg-amber-500 hover:bg-amber-600 text-white px-10 py-4 rounded-xl font-bold text-lg transition-all shadow-lg"
+          leadChannel="nav_contact"
+          leadLocation="cta_section"
         >
           تواصل معنا
-        </Link>
+        </TrackedContactLink>
       </div>
     </section>
   );

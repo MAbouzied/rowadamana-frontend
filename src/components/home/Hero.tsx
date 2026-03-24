@@ -1,4 +1,5 @@
 import Link from "next/link";
+import TrackedContactLink from "@/components/analytics/TrackedContactLink";
 import { HERO_CONTENT } from "@/lib/constants";
 
 export default function Hero() {
@@ -26,12 +27,14 @@ export default function Hero() {
           {HERO_CONTENT.description}
         </p>
         <div className="flex flex-col sm:flex-row gap-4 justify-center">
-          <Link
+          <TrackedContactLink
             href="/contact"
             className="inline-flex items-center justify-center gap-2 bg-amber-500 hover:bg-amber-600 text-white px-10 py-4 rounded-xl font-bold text-base transition-all shadow-xl hover:shadow-amber-500/30 hover:scale-105"
+            leadChannel="nav_contact"
+            leadLocation="hero"
           >
             تواصل معنا
-          </Link>
+          </TrackedContactLink>
           <Link
             href="/portfolio"
             className="inline-flex items-center justify-center gap-2 border-2 border-white/90 text-white hover:bg-white/15 px-10 py-4 rounded-xl font-bold text-base transition-all hover:scale-105"
