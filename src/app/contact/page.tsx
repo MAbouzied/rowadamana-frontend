@@ -163,21 +163,21 @@ export default function ContactPage() {
                   rel="noopener noreferrer"
                   className="inline-flex items-center gap-2 text-amber-600 hover:text-amber-700 font-semibold"
                 >
-                  عرض الموقع على الخريطة
+                  عرض نطاق الخدمة في جدة
                   <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
                   </svg>
                 </a>
               <div className="rounded-2xl overflow-hidden shadow-xl border border-slate-200 h-[400px]">
                 <iframe
-                  src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3624.0!2d46.7!3d24.7!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3e2f03890d489399%3A0xba974d1c98e79fd5!2sRiyadh!5e0!3m2!1sen!2ssa!4v1710000000000"
+                  src={CONTACT.mapEmbed}
                   width="100%"
                   height="100%"
                   style={{ border: 0 }}
                   allowFullScreen
                   loading="lazy"
                   referrerPolicy="no-referrer-when-downgrade"
-                  title="موقع رواد الامانة"
+                  title="نطاق خدمة رواد الامانة في جدة"
                   className="w-full h-full min-h-[400px]"
                 />
               </div>
