@@ -25,7 +25,7 @@ const ibmPlexArabic = IBM_Plex_Sans_Arabic({
 const siteUrl = getSiteUrl();
 const defaultTitle = `${SITE_NAME} – ${SITE_TAGLINE}`;
 const defaultDescription =
-  "رواد الامانة لتركيب الشتر والزجاج – نوافذ شتر، تند ومظلات، غطاء حمام السباحة، عربات فودتراك. الرياض.";
+  "رواد الامانة لتركيب الشتر والزجاج – نوافذ شتر، تند ومظلات، غطاء حمام السباحة، عربات فودتراك. جدة.";
 
 export const metadata: Metadata = {
   metadataBase: new URL(siteUrl),
@@ -90,8 +90,9 @@ export default function RootLayout({
         <GoogleTagManager gtmId="GTM-PDCHN49R" dataLayer={{ page_language: "ar" }} />
         <JsonLd />
         <Header />
-        <main className="min-h-screen pb-20 md:pb-0">{children}</main>
+        <main className="min-h-screen">{children}</main>
         <Footer />
+        <div className="h-[calc(6rem+env(safe-area-inset-bottom))] md:hidden" aria-hidden="true" />
         <StickyContact />
       </body>
     </html>
