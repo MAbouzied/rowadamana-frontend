@@ -25,7 +25,15 @@ function PhoneIcon({ className }: { className?: string }) {
 export default function StickyContact() {
   return (
     <>
-      {/* Desktop: floating circular WhatsApp button */}
+      {/* Desktop contact buttons */}
+      <a
+        href={telUrl}
+        className="fixed bottom-6 right-24 z-50 hidden md:flex items-center justify-center gap-2 rounded-full bg-amber-500 px-5 py-4 font-bold text-slate-900 shadow-lg hover:bg-amber-400 transition-colors focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-amber-600"
+        onClick={() => pushLeadInteraction("phone", "sticky_desktop")}
+      >
+        <PhoneIcon className="w-6 h-6" />
+        <span>اتصل الآن</span>
+      </a>
       <a
         href={whatsappUrl}
         target="_blank"
@@ -41,22 +49,22 @@ export default function StickyContact() {
       <div className="fixed bottom-0 left-0 right-0 z-50 md:hidden bg-white/95 backdrop-blur-sm border-t border-slate-200 px-4 py-3 pb-[max(0.75rem,env(safe-area-inset-bottom))]">
         <div className="max-w-2xl mx-auto flex gap-3">
           <a
-            href={whatsappUrl}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="flex-1 flex items-center justify-center gap-2 py-3.5 px-4 rounded-2xl bg-[#25D366] text-white font-semibold text-base shadow-sm hover:bg-[#20bd5a] transition-colors"
-            onClick={() => pushLeadInteraction("whatsapp", "sticky_mobile")}
-          >
-            <WhatsAppIcon className="w-7 h-7 flex-shrink-0" />
-            <span>واتساب</span>
-          </a>
-          <a
             href={telUrl}
-            className="flex-1 flex items-center justify-center gap-2 py-3.5 px-4 rounded-2xl bg-white border border-slate-200 text-slate-700 font-semibold text-base shadow-sm hover:bg-slate-50 transition-colors"
+            className="flex-[2] flex items-center justify-center gap-2 py-3.5 px-4 rounded-2xl bg-amber-500 text-slate-900 font-bold text-base shadow-sm hover:bg-amber-400 transition-colors focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-amber-600"
             onClick={() => pushLeadInteraction("phone", "sticky_mobile")}
           >
             <PhoneIcon className="w-6 h-6 flex-shrink-0" />
             <span>اتصل الآن</span>
+          </a>
+          <a
+            href={whatsappUrl}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="flex-1 flex items-center justify-center gap-2 py-3.5 px-4 rounded-2xl bg-white border border-green-700 text-green-700 font-semibold text-base shadow-sm hover:bg-green-50 transition-colors focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-green-700"
+            onClick={() => pushLeadInteraction("whatsapp", "sticky_mobile")}
+          >
+            <WhatsAppIcon className="w-7 h-7 flex-shrink-0" />
+            <span>واتساب</span>
           </a>
         </div>
       </div>
