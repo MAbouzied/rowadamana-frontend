@@ -4,7 +4,7 @@ import { getAbsoluteUrl } from "@/lib/site";
 
 export const metadata: Metadata = {
   title: "تواصل معنا",
-  description: `تواصل مع ${SITE_NAME} للاستفسار عن الشتر والزجاج والتند والمظلات وغطاء المسبح وعربات الفودتراك. الرياض وجدة.`,
+  description: `تواصل مع ${SITE_NAME} للاستفسار عن الشتر والزجاج والتند والمظلات وغطاء المسبح وعربات الفودتراك. جدة.`,
   alternates: { canonical: getAbsoluteUrl("/contact") },
   openGraph: {
     title: `تواصل معنا | ${SITE_NAME}`,
