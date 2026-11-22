@@ -38,9 +38,9 @@ export const SERVICES: Record<
 > = {
   "window-shutter": {
     slug: "window-shutter",
-    title: "نوافذ شتر",
+    title: "تركيب شتر نوافذ بجدة",
     description:
-      "يجمع بين الأناقة والوظائف العملية يجعله خيارًا مميزًا لمن يبحثون عن حلاً عصريًا لتغطية النوافذ.",
+      "شتر نوافذ كهربائي أو يدوي بجدة، بمقاسات وألوان حسب الطلب، مع ضمان على المنتج والتركيب. اتصل لطلب عرض سعر.",
     image: "/images/window-shutter/WhatsApp-Image-2023-11-11-at-6.41.41-AM-1-300x300.jpeg",
     heroImage: "/images/window-shutter/WhatsApp-Image-2023-11-11-at-6.41.41-AM-1-300x300.jpeg",
     gallery: [
@@ -597,10 +597,9 @@ export const CONTACT = {
   phoneFormatted: "+966-553027623",
   whatsapp: "+966553027623",
   email: "info@rowadamana.com",
-  address: "الرياض",
-  mapUrl: "https://maps.app.goo.gl/hLFD1qAMWeDRiHHE6",
-  mapEmbed:
-    "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d462565.2!2d46.6753!3d24.7136!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3e2f03890d489399%3A0xba974d1c98e79fd5!2sRiyadh%2C%20Saudi%20Arabia!5e0!3m2!1sen!2ssa!4v1710000000000!5m2!1sen!2ssa",
+  address: "جدة",
+  mapUrl: "https://www.google.com/maps/search/?api=1&query=Jeddah%2C%20Saudi%20Arabia",
+  mapEmbed: "https://maps.google.com/maps?q=Jeddah%2C%20Saudi%20Arabia&z=11&output=embed",
 };
 
 export const NAV_LINKS = [
@@ -613,7 +612,7 @@ export const NAV_LINKS = [
 export const ABOUT_CONTENT = {
   headline: "نقدم لك أفضل تصاميم لمنزلك ومشاريعك من خلال الزجاج والشتر",
   intro:
-    "تأسست رواد الامانة لتقديم حلول متكاملة في أعمال الشتر والزجاج في المملكة العربية السعودية. نلتزم بأعلى معايير الجودة والتصميم العصري، ونخدم عملاءنا في جدة والرياض ومناطق أخرى.",
+    "تأسست رواد الامانة لتقديم حلول متكاملة في أعمال الشتر والزجاج في المملكة العربية السعودية. نلتزم بأعلى معايير الجودة والتصميم العصري، ونخدم عملاءنا في جدة.",
   story:
     "تصميم الزجاج والشتر للمنازل هو مزيج يجمع بين الجمال والوظائف العملية لتحقيق بيئة معيشية متميزة. يُعَدُّ هذا التحالف بين الزجاج الشفاف والتصاميم المتينة تطورًا مهمًا في مجال تصميم المباني الحديثة والمنازل.",
   vision:
