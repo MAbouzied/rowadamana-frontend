@@ -50,6 +50,7 @@ export default async function ServicePage({
   if (!SERVICE_SLUGS.includes(slug as ServiceSlug)) notFound();
 
   const service = SERVICES[slug as ServiceSlug];
+  const isWindowShutter = slug === "window-shutter";
   const gallery =
     service.gallery && service.gallery.length > 0
       ? service.gallery
@@ -59,20 +60,42 @@ export default async function ServicePage({
 
   return (
     <div>
-      <section className="relative h-[55vh] min-h-[400px] bg-slate-900 overflow-hidden">
+      <section className={`relative h-[55vh] bg-slate-900 overflow-hidden ${isWindowShutter ? "min-h-[460px]" : "min-h-[400px]"}`}>
         <SiteImage
           src={"heroImage" in service && service.heroImage ? service.heroImage : (service.image || "https://rowadamana.com/wp-content/uploads/2023/08/Untitled-design-42.jpg")}
           alt={service.title}
           className="absolute inset-0 w-full h-full object-cover object-center min-w-full min-h-full"
         />
         <div className="absolute inset-0 bg-gradient-to-t from-slate-900 via-slate-900/70 to-transparent" />
-        <div className="absolute bottom-0 left-0 right-0 p-10">
-          <h1 className="font-cairo text-4xl sm:text-5xl font-bold text-white mb-4">
+        <div className={`absolute bottom-0 left-0 right-0 ${isWindowShutter ? "p-6 sm:p-10" : "p-10"}`}>
+          <h1 className={`font-cairo sm:text-5xl font-bold text-white mb-4 ${isWindowShutter ? "text-3xl" : "text-4xl"}`}>
             {service.title}
           </h1>
           <p className="text-slate-300 text-lg max-w-2xl">
             {service.description}
           </p>
+          {isWindowShutter && (
+            <div className="mt-6 flex flex-wrap gap-3">
+              <TrackedContactAnchor
+                href={`tel:${CONTACT.phone}`}
+                className="inline-flex items-center justify-center rounded-xl bg-amber-500 px-6 py-3 font-bold text-slate-900 hover:bg-amber-400 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-amber-400"
+                leadChannel="phone"
+                leadLocation="shutter_hero"
+              >
+                اتصل الآن لطلب عرض سعر
+              </TrackedContactAnchor>
+              <TrackedContactAnchor
+                href={`https://wa.me/${CONTACT.whatsapp.replace(/\D/g, "")}`}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center justify-center rounded-xl border border-white/60 px-6 py-3 font-bold text-white hover:bg-white/10 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-white"
+                leadChannel="whatsapp"
+                leadLocation="shutter_hero"
+              >
+                تواصل عبر واتساب
+              </TrackedContactAnchor>
+            </div>
+          )}
         </div>
       </section>
 
@@ -153,6 +176,16 @@ export default async function ServicePage({
           </div>
 
           <aside className="space-y-8">
+            {isWindowShutter && (
+              <TrackedContactAnchor
+                href={`tel:${CONTACT.phone}`}
+                className="flex items-center justify-center w-full rounded-xl bg-amber-500 px-6 py-4 text-lg font-bold text-slate-900 shadow-lg hover:bg-amber-400 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-amber-600"
+                leadChannel="phone"
+                leadLocation="service_page_cta"
+              >
+                اتصل الآن لطلب عرض سعر
+              </TrackedContactAnchor>
+            )}
             {service.materials && service.materials.length > 0 && (
               <div className="bg-slate-50 rounded-2xl p-6">
                 <h3 className="font-cairo font-bold text-xl text-slate-900 mb-4">
